@@ -1,33 +1,22 @@
 <?php
 
 $arg = [
-
-    'column-width'=>'12'
-
+    'column-width' => '12'
 ];
 
-
-
-if (! empty($atts)) {
+if (!empty($atts)) {
 
     $arg = wp_parse_args($atts, $arg);
 
 }
 
-
-
-;?>
-
-
+?>
 
 <?php ob_start(); ?>
 
-
-
 <div class="row">
 
-    <div class="large-<?php echo $arg['column-width'];?> medium-<?php echo $arg['column-width'];?> columns">
-
+    <div class="large-<?php echo $arg['column-width']; ?> medium-<?php echo $arg['column-width']; ?> columns">
 
 
         <div class="property-search-box-wrap" style="margin-bottom: 20px">
@@ -36,11 +25,7 @@ if (! empty($atts)) {
 
                 <div class="columns large-10">
 
-
-
                     <form method="post" id="calculator" class="property-search-form">
-
-
 
                         <div class="row">
 
@@ -53,8 +38,6 @@ if (! empty($atts)) {
                                 </label>
 
                             </div>
-
-
 
                             <div class="columns large-6 medium-6 search-location">
 
@@ -72,8 +55,6 @@ if (! empty($atts)) {
 
                             </div>
 
-
-
                         </div>
 
                         <div class="row">
@@ -89,14 +70,11 @@ if (! empty($atts)) {
                     </form>
 
 
-
                 </div>
 
             </div>
 
         </div><!-- End form -->
-
-
 
         <div class="row">
 
@@ -166,13 +144,11 @@ if (! empty($atts)) {
 
         </div>
 
-
-
     </div>
 
 </div> <!-- Section -->
 
-<?php return ob_get_clean();?>
+<?php return ob_get_clean(); ?>
 
 
 

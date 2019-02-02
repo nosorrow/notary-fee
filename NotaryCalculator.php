@@ -20,11 +20,8 @@ defined('ABSPATH') or die('No script kiddies please!');
  *  nfc_ : notary fee calculator
  */
 class NotaryCalculator
-
 {
-
     public function __construct()
-
     {
 
         add_action('wp_enqueue_scripts', [$this, 'nfc_register_scripts']);
@@ -33,16 +30,12 @@ class NotaryCalculator
 
     }
 
-
     public function nfc_register_scripts()
-
     {
 
         wp_enqueue_script('notary_fee', plugins_url('/assets/js/notary_fee.js', __FILE__), '', '1.0.0', true);
 
-
     }
-
 
     public function nfc_add_form_shortcode()
 
@@ -54,11 +47,9 @@ class NotaryCalculator
 
 
     public function nfc_display_form_html($atts)
-
     {
 
         $arg = [
-
             'framework' => 'foundation'
 
         ];
@@ -70,35 +61,27 @@ class NotaryCalculator
 
         }
 
-
         return include plugin_dir_path(__FILE__) . '/includes/calculator_form_html_' . $arg['framework'] . '.php';
 
     }
 
-
     public function activate()
-
     {
 
         flush_rewrite_rules();
 
     }
-
 
     public function deactivate()
-
     {
 
         flush_rewrite_rules();
 
     }
-
 
 }
 
-
 $notaryCalculator = new NotaryCalculator();
-
 
 register_activation_hook(__FILE__, [$notaryCalculator, 'activate']);
 

@@ -2,31 +2,22 @@
 
 $arg = [
 
-    'column-width'=>'12'
+    'column-width' => '12'
 
 ];
 
 
-
-if (! empty($atts)) {
+if (!empty($atts)) {
 
     $arg = wp_parse_args($atts, $arg);
 
-}
-
-
-
-;?>
-
-
+}; ?>
 
 <?php ob_start(); ?>
 
-
-
 <div class="row">
 
-    <div class="col-md-<?php echo $arg['column-width'];?>">
+    <div class="col-md-<?php echo $arg['column-width']; ?>">
 
         <form id="calculator" name="calc" class="bordered">
 
@@ -42,15 +33,11 @@ if (! empty($atts)) {
 
                 </div>
 
-
-
                 <div class="col-sm-12 col-md-5">
 
                     <div class="form-group">
 
                         <select class="form-control" name="city" id="city">
-
-                            <!--                        <option value="">изберете град</option>-->
 
                             <option value="2.5">Стара Загора</option>
 
@@ -61,8 +48,6 @@ if (! empty($atts)) {
                     </div>
 
                 </div>
-
-
 
             </div>
 
@@ -139,24 +124,18 @@ if (! empty($atts)) {
                         </tbody>
 
                     </table>
-
-
-
+                    
                 </div>
 
             </div>
 
         </form>
 
-
-
     </div>
 
 </div>
 
-
-
-<?php return ob_get_clean();?>
+<?php return ob_get_clean(); ?>
 
 
 

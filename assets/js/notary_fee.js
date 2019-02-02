@@ -5,7 +5,6 @@
     var local_tax, local_percent, notary_fee, agency_tax, vat_tax, total;
 
 
-
     $('#cost').on('input', function () {
 
         //e.preventDefault();
@@ -15,13 +14,11 @@
     });
 
 
-
     $('#city').on('change', function () {
 
         //e.preventDefault();
 
         calculateFee();
-
 
 
     });
@@ -31,9 +28,7 @@
         cost = $("#cost").val();
 
 
-
         console.log($("#cost").val());
-
 
 
         if (checkNumber(cost) === false) {
@@ -43,25 +38,19 @@
             $("#local-tax").text(0);
 
 
-
             $("#notary-fee").text(0);
-
 
 
             $("#agency").text(0);
 
 
-
             $("#vat").text(0);
-
 
 
             $("#total").text(0);
 
 
-
             return false;
-
 
 
         } else {
@@ -69,9 +58,6 @@
             $("#error").hide();
 
         }
-
-
-
 
 
         local_tax = localTax(cost);
@@ -85,25 +71,16 @@
         total = local_tax + notary_fee + agency_tax + vat_tax;
 
 
-
-
-
         $("#local-tax").text(local_tax.toFixed(2) + " лв.");
-
 
 
         $("#notary-fee").text(notary_fee.toFixed(2) + " лв.");
 
 
-
         $("#agency").text(agency_tax.toFixed(2) + " лв.");
 
 
-
         $("#vat").text(vat_tax.toFixed(2) + " лв.");
-
-
-
 
 
         $("#total").text(total.toFixed(2) + " лв.");
@@ -127,9 +104,7 @@
     }
 
 
-
     function getNotaryGroup(cost) {
-
 
 
         if (cost < 100 && cost > 0) {
@@ -155,11 +130,9 @@
             notary = {price: 10000, fee: 160.5, percent: 0.8}
 
 
-
         } else if (cost >= 50000 && cost < 100000) {
 
             notary = {price: 50000, fee: 480.5, percent: 0.5}
-
 
 
         } else if (cost >= 100000 && cost < 500000) {
@@ -167,15 +140,12 @@
             notary = {price: 100000, fee: 730.5, percent: 0.2}
 
 
-
         } else {
 
             notary = {price: 500000, fee: 1530.5, percent: 0.1}
 
 
-
         }
-
 
 
         if (notary > 6000) {
@@ -183,19 +153,15 @@
             return 6000;
 
 
-
         } else {
-
 
 
             return notary;
 
 
-
         }
 
     }
-
 
 
     // изчислява превишението
@@ -205,7 +171,6 @@
         return cost - min_exc;
 
     }
-
 
 
     //=================
@@ -221,7 +186,6 @@
     }
 
 
-
     function agency(cost) {
 
         a = cost * 0.1 / 100;
@@ -231,25 +195,20 @@
     }
 
 
-
     function notaryFee(cost) {
 
         var fee, feeGroup;
 
 
-
         feeGroup = getNotaryGroup(cost);
-
 
 
         fee = parseFloat(feeGroup.fee + (getExceedance(cost, feeGroup.price) * (feeGroup.percent / 100)));
 
 
-
         return Math.round(fee * 100) / 100
 
     }
-
 
 
     function vat(fee) {

@@ -11,6 +11,7 @@
 
         calculateFee();
 
+
     });
 
 
@@ -111,21 +112,15 @@
 
             notary = {price: 0, fee: 30, percent: 0}
 
-        }
-
-        else if (cost >= 100 && cost < 1000) {
+        } else if (cost >= 100 && cost < 1000) {
 
             notary = {price: 100, fee: 30, percent: 1.5}
 
-        }
-
-        else if (cost >= 1000 && cost < 10000) {
+        } else if (cost >= 1000 && cost < 10000) {
 
             notary = {price: 1000, fee: 43.5, percent: 1.3}
 
-        }
-
-        else if (cost >= 10000 && cost < 50000) {
+        } else if (cost >= 10000 && cost < 50000) {
 
             notary = {price: 10000, fee: 160.5, percent: 0.8}
 
